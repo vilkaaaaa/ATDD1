@@ -8,7 +8,7 @@
             Console.WriteLine("Введите описание задачи");
             taskMameger.AddTask(Console.ReadLine());
             var taskId = taskMameger.GetTasks()[0].Id;
-            Console.WriteLine("Выберите действие (цифру):\n1. Изменить статус\n2. Удалить задачу");
+            Console.WriteLine("Выберите действие (цифру):\n1. Изменить статус\n2. Добавить задачу\n3. Удалить задачу");
             var action = Console.ReadKey();
             if (action.KeyChar == '1')
             {
@@ -18,6 +18,14 @@
                 taskMameger.GetTasks();
             }
             if (action.KeyChar == '2')
+            {
+                Console.WriteLine();
+                Console.WriteLine("Введите описание задачи");
+                taskMameger.AddTask(Console.ReadLine());
+                Console.WriteLine("Задача добавлена");
+                taskMameger.GetTasks();
+            }
+            if (action.KeyChar == '3')
             {
                 Console.WriteLine();
                 taskMameger.GetTasks();
