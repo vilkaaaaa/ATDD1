@@ -8,7 +8,7 @@ namespace ATDD
 {
     public class TaskMameger
     {
-        private List <Task> tasks = new List <Task> ();
+        public List <Task> tasks = new List <Task> ();
         public void AddTask(string description) 
         {
         tasks.Add(new Task { Id = Guid.NewGuid(), Description = description, Status="не начато"});
@@ -16,7 +16,11 @@ namespace ATDD
         public List<Task> GetTasks() {
             foreach (var task in tasks)
             {
-                Console.WriteLine($"Id: {task.Id} Описание: {task.Description} Статус: {task.Status}");
+                for (int i = 1; i <= tasks.Count; i++)
+                {
+                    Console.WriteLine($"№ {i} Id: {task.Id} Описание: {task.Description} Статус: {task.Status}");
+                    break;
+                }
 
             }
             return tasks;
